@@ -16,10 +16,7 @@
  */
 package guru.sfg.beer.inventory.service.domain;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
@@ -34,7 +31,8 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @Entity
-public class BeerInventory extends BaseEntity{
+@ToString
+public class BeerInventory extends BaseEntity {
 
     @Builder
     public BeerInventory(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate, UUID beerId,
@@ -45,8 +43,8 @@ public class BeerInventory extends BaseEntity{
         this.quantityOnHand = quantityOnHand;
     }
 
-    @Type(type="org.hibernate.type.UUIDCharType")
-    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false )
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
     private UUID beerId;
 
     private String upc;

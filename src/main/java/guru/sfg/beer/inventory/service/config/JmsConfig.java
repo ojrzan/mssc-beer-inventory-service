@@ -9,8 +9,7 @@ import org.springframework.jms.support.converter.MessageType;
 @Configuration
 public class JmsConfig {
 
-    public static final String MY_QUEUE = "my-hello-world";
-    public static final String MY_SEND_RCV_QUEUE = "replaybacktome";
+    public static final String NEW_INVENTORY_QUEUE = "new-inventory";
 
     @Bean
     public MessageConverter messageConverter() {
